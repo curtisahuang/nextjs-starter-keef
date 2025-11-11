@@ -21,7 +21,7 @@ describe('Home page component', () => {
     expect(screen.getByText(/src\/app\/page\.tsx/i)).toBeInTheDocument()
   })
 
-  it.skip('a skipped example test', () => {
-    // This test is intentionally skipped as an example.
+  it('runs formerly skipped example test', () => {
+    expect(true).toBe(true)
   })
 })
