@@ -3,9 +3,10 @@ import { render, screen } from '@testing-library/react'
 import Home from '../app/page'
 
 jest.mock('next/image', () => {
-  return function MockedImage(props: any) {
+  return function MockedImage(props: React.ImgHTMLAttributes<HTMLImageElement>) {
     // Render an img tag to avoid Next.js Image complexities in tests
     // eslint-disable-next-line jsx-a11y/alt-text
+    // eslint-disable-next-line @next/next/no-img-element
     return <img {...props} />
   }
 })
