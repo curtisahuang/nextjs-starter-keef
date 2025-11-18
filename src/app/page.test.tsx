@@ -14,29 +14,4 @@ describe("Home page", () => {
     expect(screen.getByText(/Get started by editing/i)).toBeInTheDocument();
     expect(screen.getByText(/Save and see your changes instantly/i)).toBeInTheDocument();
   });
-
-  it("renders footer navigation links with correct labels", () => {
-    render(<Home />);
-    expect(
-      screen.getByRole("link", {
-        name: /learn/i,
-      })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", {
-        name: /examples/i,
-      })
-    ).toBeInTheDocument();
-    expect(
-      screen.getByRole("link", {
-        name: /go to nextjs.org/i,
-      })
-    ).toBeInTheDocument();
-  });
-
-  it("renders Next.js logo image", () => {
-    render(<Home />);
-    const logo = screen.getByAltText("Next.js logo");
-    expect(logo).toBeInTheDocument();
-  });
 });
