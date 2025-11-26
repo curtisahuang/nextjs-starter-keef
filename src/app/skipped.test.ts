@@ -16,4 +16,8 @@ describe("skipped examples", () => {
     div.setAttribute("data-test", "nope");
     expect(div.getAttribute("data-test")).toBe("yep");
   });
+
+  it.skip("is intentionally skipped (throwing case)", () => {
+    throw new Error("this test would fail if not skipped");
+  });
 });
