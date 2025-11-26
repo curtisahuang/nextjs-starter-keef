@@ -10,4 +10,10 @@ describe("skipped examples", () => {
     const value = await Promise.resolve("hello");
     expect(value).toBe("world");
   });
+
+  it.skip("is intentionally skipped (dom case)", () => {
+    const div = document.createElement("div");
+    div.setAttribute("data-test", "nope");
+    expect(div.getAttribute("data-test")).toBe("yep");
+  });
 });
