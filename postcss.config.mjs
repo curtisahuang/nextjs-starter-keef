@@ -1,7 +1,8 @@
-import tailwind from "@tailwindcss/postcss";
-
 const config = {
-  plugins: [tailwind],
+  // Next.js requires PostCSS plugins to be specified by string for lazy loading
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
 };
 
 export default config;
