@@ -15,7 +15,7 @@ describe("RootLayout", () => {
 
 describe("metadata", () => {
   it("contains the expected title and description", () => {
-    expect(metadata.title).toBe("Pink Peaches");
+    expect(metadata.title).toBe("🍑 Pink Peaches");
     expect(metadata.description).toContain("pink peaches");
   });
 });

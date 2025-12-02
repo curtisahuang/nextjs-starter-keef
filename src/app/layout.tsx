@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Pink Peaches",
+  title: "🍑 Pink Peaches",
   description: "Celebrating the delicious sweetness of pink peaches. No yellow allowed.",
 };
 
