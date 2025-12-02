@@ -1,7 +1,8 @@
 import React from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+// Temporarily disable global CSS import to avoid lightningcss native binding errors in this environment
+// import "./globals.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
