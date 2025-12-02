@@ -4,27 +4,44 @@ import Image from "next/image";
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start max-w-[960px] w-full">
+        {/* Mango hero */}
+        <div className="w-full rounded-2xl p-6 sm:p-10 bg-gradient-to-br from-yellow-200 via-amber-200 to-orange-200 border border-black/[.08] dark:border-white/[.145]">
+          <div className="flex items-center gap-4">
+            <div className="text-5xl sm:text-6xl">🥭</div>
+            <h1 className="text-2xl sm:text-4xl font-semibold tracking-tight">Mango Mania</h1>
+          </div>
+          <p className="mt-3 text-sm sm:text-base text-black/80 dark:text-white/80">
+            Discover varieties, recipes, and fun facts about the king of fruits. This is a Next.js app themed entirely around mangoes.
+          </p>
+          <ul className="mt-4 grid sm:grid-cols-3 gap-3 text-sm">
+            <li className="rounded-lg px-3 py-2 bg-white/70 dark:bg-black/30 border border-black/[.08] dark:border-white/[.145]">• Alphonso — rich, sweet, and aromatic</li>
+            <li className="rounded-lg px-3 py-2 bg-white/70 dark:bg-black/30 border border-black/[.08] dark:border-white/[.145]">• Kesar — saffron-hued and fragrant</li>
+            <li className="rounded-lg px-3 py-2 bg-white/70 dark:bg-black/30 border border-black/[.08] dark:border-white/[.145]">• Haden — classic, bright, and juicy</li>
+          </ul>
+        </div>
+
+        {/* Keep Next.js quickstart so existing tests continue to pass */}
+        <div className="flex flex-col items-center sm:items-start">
+          <Image
+            className="dark:invert"
+            src="/next.svg"
+            alt="Next.js logo"
+            width={180}
+            height={38}
+            priority
+          />
+          <ol className="mt-4 font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
+            <li className="mb-2 tracking-[-.01em]">
+              Get started by editing{" "}
+              <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
+                src/app/page.tsx
+              </code>
+              .
+            </li>
+            <li className="tracking-[-.01em]">Save and see your changes instantly.</li>
+          </ol>
+        </div>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
