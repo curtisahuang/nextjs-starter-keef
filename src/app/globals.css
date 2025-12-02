@@ -1,26 +1,149 @@
-@import "tailwindcss";
-
+/* Global styles without Tailwind */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --bg-start: #fff7cc;
+  --bg-mid: #ffe7b3;
+  --bg-end: #ffd9a3;
+  --surface: #ffffffcc;
+  --surface-dark: #1a1a1acc;
+  --text: #171717;
+  --muted: #525252;
+  --brand: #ea580c; /* orange-600 */
+  --brand-hover: #c2410c; /* orange-700 */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --bg-start: #0e0b00;
+    --bg-mid: #1a1300;
+    --bg-end: #2a1a00;
+    --surface: #ffffff1a;
+    --surface-dark: #0000004d;
+    --text: #ededed;
+    --muted: #a3a3a3;
   }
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: linear-gradient(to bottom, var(--bg-start), var(--bg-mid), var(--bg-end));
+}
+
+/* Layout helpers */
+.container {
+  max-width: 80rem; /* 1280px */
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+.section {
+  padding: 2.5rem 0;
+}
+
+/* Header */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  backdrop-filter: saturate(1.2) blur(8px);
+  background: color-mix(in oklab, white 70%, transparent);
+  border-bottom: 1px solid #00000010;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+.nav {
+  display: none;
+  gap: 1.5rem;
+  font-size: .9rem;
+  color: color-mix(in oklab, var(--text) 70%, transparent);
+}
+@media (min-width: 640px) {
+  .nav { display: flex; }
+}
+.nav a { text-decoration: none; color: inherit; }
+.nav a:hover { text-decoration: underline; }
+
+/* Hero */
+.hero {
+  margin-top: 1rem;
+}
+.hero-card {
+  border: 1px solid #00000014;
+  background: linear-gradient(to bottom right, #fde68a, #fcd34d, #fb923c);
+  border-radius: 24px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px #0000000d;
+}
+.hero-title {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 0;
+}
+.hero-sub {
+  margin-top: .75rem;
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 50ch;
+}
+.hero-actions { display: flex; gap: .75rem; margin-top: 1rem; flex-wrap: wrap; }
+.button-primary {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--brand);
+  color: white;
+  padding: .75rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500; font-size: .95rem;
+}
+.button-primary:hover { background: var(--brand-hover); }
+.button-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid #00000014;
+  padding: .75rem 1.25rem;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 500; font-size: .95rem; color: inherit;
+  background: color-mix(in oklab, white 60%, transparent);
+}
+.button-outline:hover { background: color-mix(in oklab, white 75%, transparent); }
+
+/* Cards and grids */
+.grid { display: grid; gap: 1rem; }
+@media (min-width: 640px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr); } }
+.card {
+  border: 1px solid #00000014;
+  background: var(--surface);
+  border-radius: 18px;
+  padding: 1rem;
+}
+.card .title { font-weight: 600; margin-top: .4rem; }
+.card .note { font-size: .9rem; color: var(--muted); }
+
+/* Footer */
+.footer {
+  border-top: 1px solid #00000010;
+  text-align: center;
+  font-size: .8rem;
+  color: color-mix(in oklab, var(--text) 60%, transparent);
+  padding: 1.25rem 0 2rem 0;
 }
