@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
+    "dev": "CSS_TRANSFORMER_WASM=1 next dev --turbopack",
+    "build": "CSS_TRANSFORMER_WASM=1 next build",
     "start": "next start",
     "lint": "next lint",
     "test": "vitest run",
