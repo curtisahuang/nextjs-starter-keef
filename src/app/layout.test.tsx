@@ -1,15 +1,15 @@
 import React from "react";
-import { render, screen } from "@testing-library/react";
+import { renderToStaticMarkup } from "react-dom/server";
 import RootLayout, { metadata } from "./layout";
 
 describe("RootLayout", () => {
-  it("renders children content", () => {
-    render(
+  it("renders children content (SSR)", () => {
+    const html = renderToStaticMarkup(
       <RootLayout>
         <div data-testid="child">Hello world</div>
       </RootLayout>
     );
-    expect(screen.getByTestId("child")).toHaveTextContent("Hello world");
+    expect(html).toContain("Hello world");
   });
 });
 
