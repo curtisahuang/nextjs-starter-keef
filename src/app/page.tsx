@@ -25,6 +25,9 @@ export default function Home() {
             Save and see your changes instantly.
           </li>
         </ol>
+        <p className="text-sm text-center sm:text-left text-gray-600 dark:text-gray-300">
+          When life gives you lemons, make lemonade.
+        </p>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           <a
