@@ -51,6 +51,15 @@ export default function Home() {
             Read our docs
           </a>
         </div>
+
+        <section className="max-w-prose text-center sm:text-left">
+          <h2 className="text-lg sm:text-xl font-semibold tracking-tight">About red pandas</h2>
+          <p className="text-sm/6 text-foreground/80 mt-2">
+            Red pandas are small, tree-dwelling mammals native to the Himalayas and southwest China. Despite their
+            name, they are not closely related to giant pandas. With reddish-brown fur and long ringed tails, they
+            spend much of their time in trees and primarily eat bamboo, fruits, and insects.
+          </p>
+        </section>
       </main>
       <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
         <a
